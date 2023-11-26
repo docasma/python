@@ -1,0 +1,39 @@
+#
+INSERT INTO dojos (name, created_at , updated_at)
+VALUES ("oxford" , now(), now()) , ("hankok" , now() , now()) , ("armani" , now() , now());
+
+#
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM dojos;
+
+#
+INSERT INTO dojos (name, created_at , updated_at)
+VALUES ("oxford" , now(), now()) , ("hankok" , now() , now()) , ("armani" , now() , now());
+
+#
+INSERT INTO ninjas (first_name , last_name , age , dojo_id , created_at , updated_at) 
+VALUES ("dali" , "klai" , 82 , 7, now(), now()) , ("ali" , "sale5" , 82 , 7 , now(), now()) , ("elene" , "mandel" , 22 , 7 , now(), now());
+
+INSERT INTO ninjas (first_name , last_name , age , dojo_id , created_at , updated_at) 
+VALUES ("lilia" , "karim" , 22 , 8, now(), now()) , ("lina" , "kalifa" , 32 , 8 , now(), now()) , ("lama" , "jon" , 22 , 8 , now(), now());
+
+INSERT INTO ninjas (first_name , last_name , age , dojo_id , created_at , updated_at) 
+VALUES ("mohamed" , "amine" , 42 , 9, now(), now()) , ("romdhan" , "issa" , 28 , 9 , now(), now()) , ("tom" , "cruse" , 60, 9 , now(), now());
+
+#
+SELECT*FROM dojos 
+LEFT JOIN ninjas ON dojos.id=ninjas.dojo_id
+WHERE id=7;
+
+#
+SELECT*FROM dojos
+LEFT JOIN ninjas ON dojo_id=ninjas.dojo_id
+where dojo.id=(SELECT MAX(id)FROM dojos);
+
+#
+SELECT*FROM dojos
+WHERE dojos.id=(SELECT MAX(id)FROM ninjas);
+
+
+
+

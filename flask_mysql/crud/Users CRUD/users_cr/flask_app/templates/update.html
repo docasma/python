@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <form action="/update" method="post" class="mx-auto col-6">
+        <input type="hidden" name="id" value="{{user.id}}">
+        <div>
+            <h2>Add a New User</h2>
+            <a href="/users">Home</a>
+        </div>
+       
+        <div class="form-group">
+            <label for="first_name">First name</label>
+            <input type="text" name="first_name" value="{{user.first_name}}" class="form-control"> 
+        </div class="form-group">
+        <div>
+            <label for="last_name">Last name</label>
+            <input type="text" name="last_name" value="{{user.last_name}}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="e_mail">Email</label>
+            <input type="text" name="e_mail" value="{{user.e_mail}}" class="form-control"> 
+        </div>
+        <input type="submit" value="Update" class="btn btn-primary">
+        <a href="/users/{{user.id}}">Show User</a>
+    </form>
+
+</body>
+</html>

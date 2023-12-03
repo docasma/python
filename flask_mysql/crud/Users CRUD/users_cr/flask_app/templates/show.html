@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read(one)</title>
+</head>
+<body>
+   
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h2 class="card-title">User{{user.id}} </h2>
+          <p class="card-text">Full name:{{user.first_name}} {{user.last_name}} </p>
+          <p class="card-text"> Email:{{user.e_mail}} </p>
+          <p class="card-text">Created on:{{user.created_at}} </p>
+          <p class="card-text">Last updated on:{{user.updated_at}} </p>
+          <a href="/user/{{user.id}}/edit" class="card-link">Edit</a>
+          <a href="/user/{{user.id}}/delete" class="card-link">Delete</a>
+          <a href="/users" class="card-link">Home</a>       
+        </div>
+      </div>
+</body>
+</html>
